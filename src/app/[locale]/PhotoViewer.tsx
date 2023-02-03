@@ -1,3 +1,4 @@
+import {useTranslations} from 'next-intl';
 import {Full as Topic} from 'unsplash-js/dist/methods/topics/types';
 import {Basic as Photo} from 'unsplash-js/dist/methods/photos/types';
 import {OrderBy} from 'unsplash-js';
@@ -16,17 +17,25 @@ type Props = {
 };
 
 export default function PhotoViewer({pageInfo, topic, photos, orderBy}: Props) {
+  const t = useTranslations('PhotoViewer');
+
   return (
     <>
       <Header
         backgroundUrl={topic.cover_photo.urls.full}
-        title="Street photography"
-        description="Street photography captures real-life moments and human interactions in public places. It is a way to tell visual stories and freeze fleeting moments of time, turning the ordinary into the extraordinary."
+        title={t('title')}
+        description={t('description')}
       />
       <Wrapper>
-        <OrderBySelect orderBy={orderBy} />
+        <OrderBySelect orderBy={orderBy}>
+          {[OrderBy.POPULAR, OrderBy.LATEST].map((value) => (
+            <option key={value} value={value}>
+              {t('orderBy', {value})}
+            </option>
+          ))}
+        </OrderBySelect>
         <PhotoGrid photos={photos} />
-        <Pagination pageInfo={pageInfo} />
+        <Pagination orderBy={orderBy} pageInfo={pageInfo} />
       </Wrapper>
     </>
   );

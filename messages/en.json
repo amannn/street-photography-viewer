@@ -1,0 +1,12 @@
+{
+  "PhotoViewer": {
+    "title": "Street photography",
+    "description": "Street photography captures real-life moments and human interactions in public places. It is a way to tell visual stories and freeze fleeting moments of time, turning the ordinary into the extraordinary.",
+    "orderBy": "{value, select, popular {Popular} latest {Latest} other {Unknown}}"
+  },
+  "Pagination": {
+    "prev": "Previous",
+    "next": "Next",
+    "info": "Page {page, number} of {totalPages, number} ({totalElements, number} results in total)"
+  }
+}

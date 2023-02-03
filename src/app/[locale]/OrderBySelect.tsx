@@ -1,17 +1,18 @@
 'use client';
 
-import {useRouter} from 'next/navigation';
-import {ChangeEvent, useTransition} from 'react';
+import {useLocalizedRouter} from 'next-intl/client';
+import {ChangeEvent, ReactNode, useTransition} from 'react';
 import {OrderBy} from 'unsplash-js';
 import Select from './Select';
 
 type Props = {
   orderBy: OrderBy;
+  children: ReactNode;
 };
 
-export default function OrderBySelect({orderBy}: Props) {
+export default function OrderBySelect({orderBy, children}: Props) {
   const [isTransitioning, startTransition] = useTransition();
-  const router = useRouter();
+  const router = useLocalizedRouter();
 
   function onChange(event: ChangeEvent<HTMLSelectElement>) {
     startTransition(() => {
@@ -25,8 +26,7 @@ export default function OrderBySelect({orderBy}: Props) {
       onChange={onChange}
       disabled={isTransitioning}
     >
-      <Select.Option value={OrderBy.POPULAR}>Popular</Select.Option>
-      <Select.Option value={OrderBy.LATEST}>Latest</Select.Option>
+      {children}
     </Select>
   );
 }

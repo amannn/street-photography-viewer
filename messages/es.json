@@ -1,0 +1,12 @@
+{
+  "PhotoViewer": {
+    "title": "Street photography",
+    "description": "La fotografía callejera capta momentos de la vida real e interacciones humanas en lugares públicos. Es una forma de contar historias visuales y congelar momentos fugaces del tiempo, convirtiendo lo ordinario en extraordinario.",
+    "orderBy": "{value, select, popular {Popular} latest {Nuevo} other {Desconocido}}"
+  },
+  "Pagination": {
+    "prev": "Anterior",
+    "next": "Siguiente",
+    "info": "Página {page, number} de {totalPages, number} ({totalElements, number} resultados en total)"
+  }
+}

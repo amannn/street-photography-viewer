@@ -21,13 +21,13 @@ export default async function Index({searchParams}: Props) {
   const topicSlug = 'street-photography';
   const orderBy = searchParams.orderBy || OrderBy.POPULAR;
   const page = parseInt(searchParams.page || '1');
-  const size = 6;
+  const size = 4;
 
   const [topicRequest, photosRequest] = await Promise.all([
     unsplash.topics.get({topicIdOrSlug: topicSlug}),
     unsplash.topics.getPhotos({
       topicIdOrSlug: topicSlug,
-      perPage: 6,
+      perPage: size,
       orderBy,
       page
     })

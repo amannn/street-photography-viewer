@@ -1,4 +1,4 @@
-import {OptionHTMLAttributes, SelectHTMLAttributes} from 'react';
+import {SelectHTMLAttributes} from 'react';
 
 type Props = SelectHTMLAttributes<HTMLSelectElement>;
 
@@ -12,9 +12,3 @@ export default function Select({children, ...rest}: Props) {
     </select>
   );
 }
-
-Select.Option = function Option(
-  props: OptionHTMLAttributes<HTMLOptionElement>
-) {
-  return <option {...props} />;
-};

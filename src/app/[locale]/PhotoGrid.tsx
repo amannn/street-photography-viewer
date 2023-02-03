@@ -1,8 +1,11 @@
+import {useIntl} from 'next-intl';
 import Image from 'next/image';
 
 export default function PhotoGrid({photos}) {
+  const intl = useIntl();
+
   return (
-    <div className="grid grid-cols-3 gap-4">
+    <div className="grid grid-cols-2 gap-4">
       {photos.map((photo) => (
         <a href={photo.links.html} key={photo.id}>
           <div className="relative h-48 bg-slate-100">
@@ -15,7 +18,7 @@ export default function PhotoGrid({photos}) {
               fill
             />
           </div>
-          <div className="border-l border-b border-r bg-white p-2">
+          <div className="flex items-center justify-between border-l border-b border-r bg-white p-2">
             <div className="flex items-center">
               <Image
                 src={photo.user.profile_image.small}
@@ -26,7 +29,9 @@ export default function PhotoGrid({photos}) {
               />
               <p className="ml-2 text-sm font-semibold">{photo.user.name}</p>
             </div>
-            <p className="mt-1 text-sm text-gray-500">{photo.updated_at}</p>
+            <p className="text-sm text-gray-500">
+              {intl.formatRelativeTime(photo.updated_at)}
+            </p>
           </div>
         </a>
       ))}
