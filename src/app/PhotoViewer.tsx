@@ -20,7 +20,7 @@ export default function PhotoViewer({pageInfo, topic, photos, orderBy}: Props) {
     <>
       <Header
         backgroundUrl={topic.cover_photo.urls.full}
-        title="Street photography browser"
+        title="Street photography"
         description="Street photography captures real-life moments and human interactions in public places. It is a way to tell visual stories and freeze fleeting moments of time, turning the ordinary into the extraordinary."
       />
       <Wrapper>

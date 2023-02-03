@@ -23,7 +23,7 @@ export default function Pagination({pageInfo}: Props) {
   return (
     <div className="flex items-center gap-3 py-8">
       {pageInfo.page > 1 && (
-        <Link href={linkToPage(pageInfo.page - 1)}>
+        <Link aria-label="Previous" href={linkToPage(pageInfo.page - 1)}>
           <ArrowLeftIcon height={24} />
         </Link>
       )}
@@ -32,7 +32,7 @@ export default function Pagination({pageInfo}: Props) {
         in total)
       </Text>
       {pageInfo.page < totalPages && (
-        <Link href={linkToPage(pageInfo.page + 1)}>
+        <Link aria-label="Next" href={linkToPage(pageInfo.page + 1)}>
           <ArrowRightIcon height={24} />
         </Link>
       )}

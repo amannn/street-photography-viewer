@@ -15,9 +15,7 @@ export default function OrderBySelect({orderBy}: Props) {
 
   function onChange(event: ChangeEvent<HTMLSelectElement>) {
     startTransition(() => {
-      const url = new URL(document.location.href);
-      url.searchParams.set('orderBy', event.target.value);
-      router.replace(url.pathname + url.search);
+      router.replace('/?orderBy=' + event.target.value);
     });
   }
 
