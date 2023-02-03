@@ -1,16 +1,20 @@
 import {Inter} from '@next/font/google';
+import {ReactNode} from 'react';
 import './globals.css';
 
 const inter = Inter({subsets: ['latin']});
 
 export const metadata = {
-  title: 'Street Photography Browser'
+  title: 'Street photography browser'
 };
 
-export default function RootLayout({children}: {children: React.ReactNode}) {
+type Props = {
+  children: ReactNode;
+};
+
+export default function RootLayout({children}: Props) {
   return (
     <html lang="en">
-      <head />
       <body className={inter.className}>{children}</body>
     </html>
   );

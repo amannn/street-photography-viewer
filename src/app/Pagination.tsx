@@ -1,33 +1,41 @@
 'use client';
 
-import {ArrowLeftIcon} from '@heroicons/react/24/solid';
+import {ArrowLeftIcon, ArrowRightIcon} from '@heroicons/react/24/solid';
 import Link from 'next/link';
 import {useSearchParams} from 'next/navigation';
+import PageInfo from './PageInfo';
+import Text from './Text';
 
-type Props = {};
+type Props = {
+  pageInfo: PageInfo;
+};
 
-{
-  /* <div>
-          <- Page 1 of 3 (20 results in total) ->
-        </div> */
-}
-
-export default function Pagination({page}: Props) {
+export default function Pagination({pageInfo}: Props) {
   const searchParams = useSearchParams();
-  console.log(searchParams);
+  const totalPages = Math.ceil(pageInfo.totalElements / pageInfo.size);
+
+  function linkToPage(page: number) {
+    const params = new URLSearchParams(searchParams);
+    params.set('page', page.toString());
+    return {query: params.toString()};
+  }
 
   return (
-    <div>
-      <Link
-        href={{
-          query: new URLSearchParams([
-            ...searchParams.entries(),
-            ['page', '2']
-          ]).toString()
-        }}
-      >
-        <ArrowLeftIcon className="h-6 w-6 text-blue-500" />
-      </Link>
+    <div className="flex items-center gap-3 py-8">
+      {pageInfo.page > 1 && (
+        <Link href={linkToPage(pageInfo.page - 1)}>
+          <ArrowLeftIcon height={24} />
+        </Link>
+      )}
+      <Text variant="small" color="muted">
+        Page {pageInfo.page} of {totalPages} ({pageInfo.totalElements} results
+        in total)
+      </Text>
+      {pageInfo.page < totalPages && (
+        <Link href={linkToPage(pageInfo.page + 1)}>
+          <ArrowRightIcon height={24} />
+        </Link>
+      )}
     </div>
   );
 }

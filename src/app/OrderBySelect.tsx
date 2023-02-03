@@ -3,6 +3,7 @@
 import {useRouter} from 'next/navigation';
 import {ChangeEvent, useTransition} from 'react';
 import {OrderBy} from 'unsplash-js';
+import Select from './Select';
 
 type Props = {
   orderBy: OrderBy;
@@ -21,14 +22,13 @@ export default function OrderBySelect({orderBy}: Props) {
   }
 
   return (
-    <select
-      className="w-full rounded-md border-gray-300 py-4 text-base text-gray-500 disabled:opacity-50"
+    <Select
       defaultValue={orderBy}
       onChange={onChange}
       disabled={isTransitioning}
     >
-      <option value={OrderBy.POPULAR}>Popular</option>
-      <option value={OrderBy.LATEST}>Latest</option>
-    </select>
+      <Select.Option value={OrderBy.POPULAR}>Popular</Select.Option>
+      <Select.Option value={OrderBy.LATEST}>Latest</Select.Option>
+    </Select>
   );
 }
