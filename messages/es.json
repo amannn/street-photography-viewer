@@ -7,6 +7,6 @@
   "Pagination": {
     "prev": "Anterior",
     "next": "Siguiente",
-    "info": "Página {page, number} de {totalPages, number} ({totalElements, number} resultados en total)"
+    "info": "Página {page, number} de {totalPages, number} ({totalElements, plural, =1 {un resultado} other {# resultados}} en total)"
   }
 }
