@@ -1,9 +1,6 @@
-import {createApi, OrderBy} from 'unsplash-js';
+import {OrderBy} from 'unsplash-js';
 import PhotoViewer from './PhotoViewer';
-
-const unsplash = createApi({
-  accessKey: process.env.UNSPLASH_ACCESS_KEY
-});
+import UnsplashApiClient from './UnsplashApiClient';
 
 // Since we're using query parameters that are only
 // known at request time, make sure we're using
@@ -24,8 +21,8 @@ export default async function Index({searchParams}: Props) {
   const size = 4;
 
   const [topicRequest, photosRequest] = await Promise.all([
-    unsplash.topics.get({topicIdOrSlug: topicSlug}),
-    unsplash.topics.getPhotos({
+    UnsplashApiClient.topics.get({topicIdOrSlug: topicSlug}),
+    UnsplashApiClient.topics.getPhotos({
       topicIdOrSlug: topicSlug,
       perPage: size,
       orderBy,
@@ -37,8 +34,8 @@ export default async function Index({searchParams}: Props) {
     <PhotoViewer
       orderBy={orderBy}
       photos={photosRequest.response.results}
-      topic={topicRequest.response}
-      pageInfo={{page, size, totalElements: topicRequest.response.total_photos}}
+      coverPhoto={topicRequest.response.cover_photo}
+      pageInfo={{page, size, totalElements: photosRequest.response.total}}
     />
   );
 }

@@ -1,6 +1,6 @@
 'use client';
 
-import {useLocalizedRouter} from 'next-intl/client';
+import {useRouter} from 'next-intl/client';
 import {ChangeEvent, ReactNode, useTransition} from 'react';
 import {OrderBy} from 'unsplash-js';
 import Select from './Select';
@@ -12,7 +12,7 @@ type Props = {
 
 export default function OrderBySelect({orderBy, children}: Props) {
   const [isTransitioning, startTransition] = useTransition();
-  const router = useLocalizedRouter();
+  const router = useRouter();
 
   function onChange(event: ChangeEvent<HTMLSelectElement>) {
     startTransition(() => {

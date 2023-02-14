@@ -1,5 +1,4 @@
 import {useTranslations} from 'next-intl';
-import {Full as Topic} from 'unsplash-js/dist/methods/topics/types';
 import {Basic as Photo} from 'unsplash-js/dist/methods/photos/types';
 import {OrderBy} from 'unsplash-js';
 import OrderBySelect from './OrderBySelect';
@@ -10,19 +9,24 @@ import Pagination from './Pagination';
 import PageInfo from './PageInfo';
 
 type Props = {
-  pageInfo: PageInfo;
-  topic: Topic;
-  photos: Photo[];
+  coverPhoto: Photo;
   orderBy: OrderBy;
+  pageInfo: PageInfo;
+  photos: Photo[];
 };
 
-export default function PhotoViewer({pageInfo, topic, photos, orderBy}: Props) {
+export default function PhotoViewer({
+  coverPhoto,
+  orderBy,
+  photos,
+  pageInfo
+}: Props) {
   const t = useTranslations('PhotoViewer');
 
   return (
     <>
       <Header
-        backgroundUrl={topic.cover_photo.urls.full}
+        backgroundUrl={coverPhoto.urls.full}
         title={t('title')}
         description={t('description')}
       />
