@@ -20,11 +20,9 @@ But first, we need to create our API client based on the official Unsplash SDK.
 ```tsx
 import {createApi} from 'unsplash-js';
 
-const UnsplashApiClient = createApi({
+export default createApi({
   accessKey: process.env.UNSPLASH_ACCESS_KEY
 });
-
-export default UnsplashApiClient;
 ```
 
 Once we have our client, we can use it in our page component.
