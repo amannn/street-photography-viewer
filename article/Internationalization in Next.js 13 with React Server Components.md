@@ -342,6 +342,6 @@ In our street photography viewer app, we were able to move only a single compone
 
 Another aspect to consider is that you might want to consider implementing loading states since the network latency introduces a delay before your users see the result of their actions.
 
-- - - -
+---
 
 You can have a look at the complete [code of the example on GitHub](https://github.com/amannn/street-photography-viewer).
