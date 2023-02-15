@@ -120,9 +120,9 @@ For each internationalized label we add, we need to make sure that there is an a
 ```js
 // en.json
 {
-  “PhotoViewer”: {
-    “title”: “Street photography”,
-    “description”: “Street photography captures real-life moments and human interactions in public places. It is a way to tell visual stories and freeze fleeting moments of time, turning the ordinary into the extraordinary.”
+  "PhotoViewer": {
+    "title": "Street photography",
+    "description": "Street photography captures real-life moments and human interactions in public places. It is a way to tell visual stories and freeze fleeting moments of time, turning the ordinary into the extraordinary."
   }
 }
 ```
@@ -130,9 +130,9 @@ For each internationalized label we add, we need to make sure that there is an a
 ```js
 // es.json
 {
-  “PhotoViewer”: {
-    “title”: “Street photography”,
-    “description“: “La fotografía callejera capta momentos de la vida real y interacciones humanas en lugares públicos. Es una forma de contar historias visuales y congelar momentos fugaces del tiempo, convirtiendo lo ordinario en lo extraordinario.“
+  "PhotoViewer": {
+    "title": "Street photography",
+    "description": "La fotografía callejera capta momentos de la vida real y interacciones humanas en lugares públicos. Es una forma de contar historias visuales y congelar momentos fugaces del tiempo, convirtiendo lo ordinario en lo extraordinario."
   }
 }
 ```
