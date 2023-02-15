@@ -315,6 +315,18 @@ export default function Pagination({pageInfo, orderBy}) {
 ```
 
 ## Conclusion
+### Server Components are a great match for internationalization
+
+Internationalization is an important part of the user experience, whether you support multiple languages or you want to get the subtleties of a single language right. A library like [`next-intl`](https://next-intl-docs.vercel.app/) can help with both cases.
+
+Implementing internationalization in Next.js apps has historically come with a performance tradeoff, but with Server Components this is no longer the case. However, it might take some time to explore and learn patterns that will help you keep your internationalization concerns on the server side.
+
+In our street photography viewer app, we were able to move only a single component to the client side: `OrderBySelect`.
+
+![](Internationalization%20in%20Next.js%2013%20with%20React%20Server%20Components/components.png)
+
+Another aspect to consider is that you might want to consider implementing loading states since the network latency introduces a delay before your users see the result of their actions.
+
 ### Search parameters are a great alternative to `useState`
 
 Search parameters are a great way to implement interactive features in Next.js apps, as they help to reduce the bundle size of the client side.
@@ -330,18 +342,6 @@ Note however that there are also **tradeoffs to consider**:
 1. Search parameter values are strings, so you may need to serialize and deserialize data types.
 2. The URL is part of the user interface, so using many search parameters may affect readability.
 
-### Server Components are a great match for internationalization
-
-Internationalization is an important part of the user experience, whether you support multiple languages or you want to get the subtleties of a single language right. A library like [`next-intl`](https://next-intl-docs.vercel.app/) can help with both cases.
-
-Implementing internationalization in Next.js apps has historically come with a performance tradeoff, but with Server Components this is no longer the case. However, it might take some time to explore and learn patterns that will help you keep your internationalization concerns on the server side.
-
-In our street photography viewer app, we were able to move only a single component to the client side: `OrderBySelect`.
-
-![](Internationalization%20in%20Next.js%2013%20with%20React%20Server%20Components/components.png)
-
-Another aspect to consider is that you might want to consider implementing loading states since the network latency introduces a delay before your users see the result of their actions.
-
----
+- - - -
 
 You can have a look at the complete [code of the example on GitHub](https://github.com/amannn/street-photography-viewer).
