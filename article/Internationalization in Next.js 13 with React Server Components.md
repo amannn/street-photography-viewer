@@ -1,8 +1,8 @@
 # Internationalization in Next.js 13 with React Server Components
-With the introduction of [Next.js 13](https://beta.nextjs.org/docs/getting-started) and [the `app` directory](https://beta.nextjs.org/docs/routing/fundamentals), React Server Components became publicly available. This new paradigm allows components that don’t require React’s interactive features such as `useState` and `useEffect` to remain server-side only.
+With the introduction of [Next.js 13](https://beta.nextjs.org/docs/getting-started) and [beta release of the `app` directory](https://beta.nextjs.org/docs/getting-started), React Server Components became publicly available. This new paradigm allows components that don’t require React’s interactive features such as `useState` and `useEffect` to remain server-side only.
 
 One area that benefits from this new capability is **internationalization**.
-Traditionally, internationalization requires a tradeoff in performance, as loading translations results in larger client-side bundles and using message parsers impacts the runtime performance of your app.
+Traditionally, internationalization requires a tradeoff in performance, as loading translations results in larger client-side bundles and using message parsers impacts the client runtime performance of your app.
 
 The promise of **React Server Components** is that we can have our cake and eat it too. If internationalization is implemented entirely on the server side, we can achieve new levels of performance for our apps, leaving the client side for interactive features. But how can we work with this paradigm when we need interactively-controlled states that should be reflected in internationalized messages?
 
@@ -44,8 +44,8 @@ export default async function Index() {
 
   return (
     <PhotoViewer
-      photos={photosRequest.response.results}
       coverPhoto={topicRequest.response.cover_photo}
+      photos={photosRequest.response.results}
     />
   );
 }
