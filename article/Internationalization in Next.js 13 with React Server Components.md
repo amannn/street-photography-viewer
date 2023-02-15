@@ -6,7 +6,7 @@ Traditionally, internationalization requires a tradeoff in performance, as loadi
 
 The promise of **React Server Components** is that we can have our cake and eat it too. If internationalization is implemented entirely on the server side, we can achieve new levels of performance for our apps, leaving the client side for interactive features. But how can we work with this paradigm when we need interactively-controlled states that should be reflected in internationalized messages?
 
-In this article, we’ll explore a multilingual app that displays street photography images from Unsplash. We’ll use [`next-intl`](https://next-intl-docs.vercel.app/) to implement all our internationalization needs in React Server Components and we’ll look at a technique for introducing interactivity without moving more parts than necessary to the client side.
+In this article, we’ll explore a multilingual app that displays street photography images from Unsplash. We’ll use [`next-intl`](https://next-intl-docs.vercel.app/) to implement all our internationalization needs in React Server Components and we’ll look at a technique for introducing interactivity with a minimalistic client-side footprint.
 
 ![](Internationalization%20in%20Next.js%2013%20with%20React%20Server%20Components/app-final-framed.png)
 
