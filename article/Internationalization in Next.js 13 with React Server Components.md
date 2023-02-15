@@ -1,3 +1,5 @@
+(draft for Smashing Magazine)
+
 # Internationalization in Next.js 13 with React Server Components
 With the introduction of [Next.js 13](https://beta.nextjs.org/docs/getting-started) and the beta release of the `app` directory, React Server Components became publicly available. This new paradigm allows components that don’t require React’s interactive features such as `useState` and `useEffect` to remain server-side only.
 
