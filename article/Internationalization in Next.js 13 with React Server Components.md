@@ -336,11 +336,11 @@ Internationalization is an important part of the user experience, whether you su
 
 Implementing internationalization in Next.js apps has historically come with a performance tradeoff, but with Server Components this is no longer the case. However, it might take some time to explore and learn patterns that will help you keep your internationalization concerns on the server side.
 
-In our street photography viewer app we were able to move only a single component to the client side: `OrderBySelect`.
+In our street photography viewer app, we were able to move only a single component to the client side: `OrderBySelect`.
 
 ![](Internationalization%20in%20Next.js%2013%20with%20React%20Server%20Components/components.png)
 
-Another aspect to consider is that you might want to consider implementing loading states, since the network latency introduces a delay before your users see the result of their actions.
+Another aspect to consider is that you might want to consider implementing loading states since the network latency introduces a delay before your users see the result of their actions.
 
 - - - -
 
