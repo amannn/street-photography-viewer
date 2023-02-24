@@ -345,3 +345,11 @@ Note however that there are also **tradeoffs to consider**:
 - - - -
 
 You can have a look at the complete [code of the example on GitHub](https://github.com/amannn/street-photography-viewer).
+
+Many thanks to [Delba Oliveira](https://twitter.com/delba_oliveira) from Vercel for providing feedback for this article!
+
+
+### Further reading on Smashing Magazine
+
+ - [Understanding App Directory Architecture In Next.js](https://www.smashingmagazine.com/2023/02/understanding-app-directory-architecture-next-js/) by Atila Fassina
+ - [Designing For Users Across Cultures: An Interview With Jenny Shen](https://www.smashingmagazine.com/2019/05/designing-users-across-cultures-interview-jenny-shen/) by Rachel Andrew
