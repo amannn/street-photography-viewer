@@ -170,7 +170,7 @@ In turn, we should provide a select widget that enables the user to change the v
 
 ![](Internationalization%20in%20Next.js%2013%20with%20React%20Server%20Components/app-order-select-collapsed.png)
 
-To be able to process the change event of the `select` element, we have no choice but to mark the component with `'use client';` so that we can attach an event handler. Nevertheless, we would like to keep the internationalization concerns on the server side to reduce the size of the client bundle.
+To be able to process the change event of the `select` element, we can mark the component with `'use client';` so that we can attach an event handler. Nevertheless, we would like to keep the internationalization concerns on the server side to reduce the size of the client bundle.
 
 Let’s have a look at the required markup for our [`select` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select).
 
