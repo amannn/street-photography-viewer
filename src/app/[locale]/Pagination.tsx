@@ -22,15 +22,10 @@ export default function Pagination({pageInfo, orderBy}: Props) {
     };
   }
 
-  // Vercel currently doesn't support the `vary` header which is used to
-  // differentiate prefetch requests, therefore manually opt-out of these.
-  // https://github.com/vercel/vercel/discussions/7612#discussioncomment-2434736
-  const prefetch = false;
-
   return (
     <div className="flex items-center gap-3 py-8">
       {pageInfo.page > 1 && (
-        <Link aria-label={t('prev')} href={getHref(pageInfo.page - 1)} prefetch={prefetch}>
+        <Link aria-label={t('prev')} href={getHref(pageInfo.page - 1)}>
           <ArrowLeftIcon height={24} />
         </Link>
       )}
@@ -38,7 +33,7 @@ export default function Pagination({pageInfo, orderBy}: Props) {
         {t('info', {...pageInfo, totalPages})}
       </Text>
       {pageInfo.page < totalPages && (
-        <Link aria-label={t('prev')} href={getHref(pageInfo.page + 1)} prefetch={prefetch}>
+        <Link aria-label={t('prev')} href={getHref(pageInfo.page + 1)}>
           <ArrowRightIcon height={24} />
         </Link>
       )}
