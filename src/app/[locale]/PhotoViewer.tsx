@@ -7,6 +7,8 @@ import PhotoGrid from './PhotoGrid';
 import Wrapper from './Wrapper';
 import Pagination from './Pagination';
 import PageInfo from './PageInfo';
+import ScrollManager from './ScrollManager';
+import Footer from './Footer';
 
 type Props = {
   coverPhoto: Photo;
@@ -30,17 +32,20 @@ export default function PhotoViewer({
         title={t('title')}
         description={t('description')}
       />
-      <Wrapper className="py-8">
-        <OrderBySelect orderBy={orderBy}>
-          {[OrderBy.POPULAR, OrderBy.LATEST].map((value) => (
-            <option key={value} value={value}>
-              {t('orderBy', {value})}
-            </option>
-          ))}
-        </OrderBySelect>
-        <PhotoGrid photos={photos} />
-        <Pagination orderBy={orderBy} pageInfo={pageInfo} />
-      </Wrapper>
+      <ScrollManager routeKey={pageInfo.page}>
+        <Wrapper className="py-8">
+          <OrderBySelect orderBy={orderBy}>
+            {[OrderBy.POPULAR, OrderBy.LATEST].map((value) => (
+              <option key={value} value={value}>
+                {t('orderBy', {value})}
+              </option>
+            ))}
+          </OrderBySelect>
+          <PhotoGrid photos={photos} />
+          <Pagination orderBy={orderBy} pageInfo={pageInfo} />
+        </Wrapper>
+      </ScrollManager>
+      <Footer />
     </>
   );
 }

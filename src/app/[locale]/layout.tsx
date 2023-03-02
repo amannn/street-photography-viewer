@@ -1,4 +1,5 @@
 import {Inter} from '@next/font/google';
+import clsx from 'clsx';
 import {useLocale} from 'next-intl';
 import {notFound} from 'next/navigation';
 import {ReactNode} from 'react';
@@ -24,8 +25,10 @@ export default function LocaleLayout({children, params}: Props) {
   }
 
   return (
-    <html lang={locale}>
-      <body className={inter.className}>{children}</body>
+    <html lang={locale} className="min-h-full flex flex-col">
+      <body className={clsx(inter.className, 'flex flex-col grow')}>
+        {children}
+      </body>
     </html>
   );
 }

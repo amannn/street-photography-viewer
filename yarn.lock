@@ -1804,10 +1804,10 @@ negotiator@0.6.3:
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.3.tgz#58e323a72fedc0d6f9cd4d31fe49f51479590ccd"
   integrity sha512-+EUsqGPLsM+j/zdChZjsnX51g4XrHFOIXwfnCVPGlQk/k5giakcKsuxCObBRu6DSm9opw/O6slWbJdghQM4bBg==
 
-next-intl@^2.11.0-beta.10:
-  version "2.11.0-beta.10"
-  resolved "https://registry.yarnpkg.com/next-intl/-/next-intl-2.11.0-beta.10.tgz#7aa3ea432785bfe71ff53949de616e27b85fa6cc"
-  integrity sha512-PXvf4h77Zkl5MkijX0+pUb6t1of8QxzyPOS+X6hl8e9/h7kNPjMJ6Ze+LzqR0I6Cf+dRxwfYt7PsPir1W/SSTQ==
+next-intl@2.11.0-beta.16:
+  version "2.11.0-beta.16"
+  resolved "https://registry.yarnpkg.com/next-intl/-/next-intl-2.11.0-beta.16.tgz#b046e10066bb2b7438b1356158dd99fa9e4a9a2f"
+  integrity sha512-aDk08eC7iUNeVEvzrOhkYqPDvwtG00jlf4cgI+S5QukqUlEPbEcu0RjC/X06Z3kPqdCJQYbmDrX/6VW4D3oJKQ==
   dependencies:
     "@formatjs/intl-localematcher" "0.2.32"
     negotiator "0.6.3"
@@ -2643,6 +2643,18 @@ use-intl@2.11.0-alpha.2:
   dependencies:
     "@formatjs/ecma402-abstract" "^1.11.4"
     intl-messageformat "^9.3.18"
+
+use-isomorphic-layout-effect@^1.1.0:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/use-isomorphic-layout-effect/-/use-isomorphic-layout-effect-1.1.2.tgz#497cefb13d863d687b08477d9e5a164ad8c1a6fb"
+  integrity sha512-49L8yCO3iGT/ZF9QttjwLF/ZD9Iwto5LnH5LmEdk/6cFmXddqi2ulF0edxTwjj+7mqvpVVGQWvbXZdn32wRSHA==
+
+use-previous@1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/use-previous/-/use-previous-1.2.0.tgz#df7f0c6d5dc7c9e81650eb29c36575306a6898c0"
+  integrity sha512-tK7Ne779nqTKGeh0rsFvxnQcEqePFRYlM0rfmNy9JH+h+2ndja7P0017nda0Q1gkqfcOD//pKZbDyyLIUH2s+Q==
+  dependencies:
+    use-isomorphic-layout-effect "^1.1.0"
 
 util-deprecate@^1.0.1, util-deprecate@^1.0.2:
   version "1.0.2"
