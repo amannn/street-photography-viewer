@@ -30,7 +30,7 @@ export default function PhotoViewer({
         title={t('title')}
         description={t('description')}
       />
-      <Wrapper>
+      <Wrapper className="py-8">
         <OrderBySelect orderBy={orderBy}>
           {[OrderBy.POPULAR, OrderBy.LATEST].map((value) => (
             <option key={value} value={value}>

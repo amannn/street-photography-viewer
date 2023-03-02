@@ -1,3 +1,7 @@
-export default function Wrapper({children}) {
-  return <div className="m-auto max-w-3xl py-8">{children}</div>;
+import clsx from 'clsx';
+
+export default function Wrapper({children, className}) {
+  return (
+    <div className={clsx('m-auto max-w-3xl px-4', className)}>{children}</div>
+  );
 }

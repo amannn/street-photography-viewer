@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import {ReactNode} from 'react';
 import Text from './Text';
+import Wrapper from './Wrapper';
 
 type Props = {
   backgroundUrl: string;
@@ -20,14 +21,14 @@ export default function Header({backgroundUrl, title, description}: Props) {
         className="object-cover"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-black/25 to-black/75" />
-      <div className="relative m-auto max-w-3xl pt-32 pb-14 text-white">
+      <Wrapper className="relative pt-32 pb-14 text-white">
         <Text variant="title" as="h1" inverted>
           {title}
         </Text>
         <Text className="mt-4 max-w-xl" inverted>
           {description}
         </Text>
-      </div>
+      </Wrapper>
     </div>
   );
 }
