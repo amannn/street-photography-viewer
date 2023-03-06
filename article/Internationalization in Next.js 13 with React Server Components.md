@@ -53,7 +53,7 @@ export default async function Index() {
 }
 ```
 
-**Note:** We use `Promise.all` to invoke both requests that we need to make in parallel. This way we avoid a potential request waterfall.
+**Note:** We use `Promise.all` to invoke both requests that we need to make in parallel. This way we avoid a request waterfall.
 
 At this point, our app renders a simple photo grid.
 
@@ -68,19 +68,19 @@ In addition to English, we’d like our app to be available in Spanish. Support 
 
 Aside from adding a second language, we’ve already found that the app doesn’t adapt well to English users because the dates should be formatted. To achieve a good user experience, we’d like to tell the user the relative time when the photo was uploaded (e.g. “8 days ago”).
 
-Once  `next-intl` is set up, we can fix the formatting by using the `formatRelativeTime` function in the component that renders each photo.
+Once  `next-intl` is set up, we can fix the formatting by using the `format.relativeTime` function in the component that renders each photo.
 
 ```tsx
-import {useIntl} from 'next-intl';
+import {useFormatter} from 'next-intl';
 
 export default function PhotoGridItem({photo}) {
-  const intl = useIntl();
+  const format = useFormatter();
   const updatedAt = new Date(photo.updated_at);
 
   return (
     <a href={photo.links.html}>
         {/* ... */}
-        <p>{intl.formatRelativeTime(updatedAt)}</p>
+        <p>{format.relativeTime(updatedAt)}</p>
       </div>
     </a>
   );

@@ -13,8 +13,15 @@ export default function ScrollManager({routeKey, children}: Props) {
   const prevRouteKey = usePrevious(routeKey);
 
   useEffect(() => {
+    const node = nodeRef.current;
+    if (!node) return;
+
     if (prevRouteKey != null && prevRouteKey !== routeKey) {
-      nodeRef.current.scrollIntoView();
+      const isVisible = node.getBoundingClientRect().top > 0;
+
+      if (!isVisible) {
+        node.scrollIntoView();
+      }
     }
   }, [prevRouteKey, routeKey]);
 
