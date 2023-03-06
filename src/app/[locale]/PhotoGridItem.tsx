@@ -1,13 +1,13 @@
 import {Basic as Photo} from 'unsplash-js/dist/methods/photos/types';
 import Image from 'next/image';
-import {useIntl} from 'next-intl';
+import {useFormatter} from 'next-intl';
 
 type Props = {
   photo: Photo;
 };
 
 export default function PhotoGridItem({photo}: Props) {
-  const intl = useIntl();
+  const format = useFormatter();
   const updatedAt = new Date(photo.updated_at);
 
   return (
@@ -34,7 +34,7 @@ export default function PhotoGridItem({photo}: Props) {
           <p className="ml-2 text-sm font-semibold">{photo.user.name}</p>
         </div>
         <p className="text-sm text-gray-500">
-          {intl.formatRelativeTime(updatedAt)}
+          {format.relativeTime(updatedAt)}
         </p>
       </div>
     </a>
