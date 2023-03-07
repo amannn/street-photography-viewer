@@ -346,8 +346,7 @@ Note however that there are also **tradeoffs to consider**:
 
 You can have a look at the complete [code of the example on GitHub](https://github.com/amannn/street-photography-viewer).
 
-Many thanks to [Delba Oliveira](https://twitter.com/delba_oliveira) from Vercel for providing feedback for this article!
-
+Many thanks to [Delba de Oliveira](https://twitter.com/delba_oliveira) from Vercel for providing feedback for this article!
 
 ### Further reading on Smashing Magazine
 
