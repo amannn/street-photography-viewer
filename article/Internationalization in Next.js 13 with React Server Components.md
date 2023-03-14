@@ -91,7 +91,7 @@ Now the date when a photo has been updated is easier to read.
 
 ![](Internationalization%20in%20Next.js%2013%20with%20React%20Server%20Components/app-photo-item-date-formatted.png)
 
-**Hint:** In a traditional React app that is rendered on both the server and client side, it can be quite a challenge to ensure that the displayed relative date is in sync across the server and client. Since these are different environments, and may even be in different time zones, you need to configure a mechanism to provide the server time for the client side. By performing the formatting only on the server side, we don’t have to worry about this problem in the first place.
+**Hint:** In a traditional React app that renders on both the server and client side, it can be quite a challenge to ensure that the displayed relative date is in sync across the server and client. Since these are different environments and may be in different time zones, you need to configure a mechanism to provide the server time for the client side. By performing the formatting only on the server side, we don’t have to worry about this problem in the first place.
 
 ### ¡Hola! 👋 Translating our app to Spanish
 
@@ -150,7 +150,7 @@ By default, the Unsplash API returns the most popular photos. We want the user t
 
 Here, the question arises whether we should resort to client-side data fetching so that we can implement this feature with `useState`. However, that would require us to move all of our components to the client side, resulting in a bloated bundle.
 
-Do we have an alternative? We do in fact. And it’s a capability that has been around on the web for ages: [search parameters](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams) (sometimes referred to as *query parameters*). What makes search parameters a great option for our use case is that they can be read on the server side.
+Do we have an alternative? Yes. And it’s a capability that has been around on the web for ages: [search parameters](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams) (sometimes referred to as *query parameters*). What makes search parameters a great option for our use case is that they can be read on the server side.
 
 So let’s modify our page component to receive `searchParams` via props.
 
@@ -262,7 +262,7 @@ The same pattern that we’ve explored for changing the order can be applied to 
 
 ![](Internationalization%20in%20Next.js%2013%20with%20React%20Server%20Components/app-pagination.png)
 
-Note that languages have different rules for handling decimal and thousand separators. Furthermore, languages have different forms of pluralization: English only makes a grammatical distinction between one and zero/many elements, but, for example, Croatian has a separate form for “few” elements.
+Note that languages have different rules for handling decimal and thousand separators. Furthermore, languages have different forms of pluralization: While English only makes a grammatical distinction between one and zero/many elements, for example Croatian has a separate form for “few” elements.
 
 `next-intl` uses the [ICU syntax](https://next-intl-docs.vercel.app/docs/usage/messages#rendering-of-messages) which makes it possible to express these language subtleties.
 
