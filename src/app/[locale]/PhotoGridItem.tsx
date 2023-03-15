@@ -11,7 +11,7 @@ export default function PhotoGridItem({photo}: Props) {
   const updatedAt = new Date(photo.updated_at);
 
   return (
-    <a href={photo.links.html}>
+    <a href={photo.links.html + '?utm_source=403665&utm_medium=referral'}>
       <div className="relative h-48 bg-slate-100">
         <Image
           priority

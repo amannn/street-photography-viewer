@@ -1804,10 +1804,10 @@ negotiator@0.6.3:
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.3.tgz#58e323a72fedc0d6f9cd4d31fe49f51479590ccd"
   integrity sha512-+EUsqGPLsM+j/zdChZjsnX51g4XrHFOIXwfnCVPGlQk/k5giakcKsuxCObBRu6DSm9opw/O6slWbJdghQM4bBg==
 
-next-intl@2.12.0-beta.1:
-  version "2.12.0-beta.1"
-  resolved "https://registry.yarnpkg.com/next-intl/-/next-intl-2.12.0-beta.1.tgz#d6def5ec46ee915ff4ee8b5626d8135967c42a33"
-  integrity sha512-kjgvKZerfwTZivq4mwy/HwI4Rl0X3NUDvlgAhVSJl+db2eZwqynwSR8BlLK958QWj2/BN/6d2OBRbI8wBUerXA==
+next-intl@2.12.0-beta.5:
+  version "2.12.0-beta.5"
+  resolved "https://registry.yarnpkg.com/next-intl/-/next-intl-2.12.0-beta.5.tgz#cbc58c291424942e5a83ab5da7173d1e446f6cd0"
+  integrity sha512-L5C0hSMiofxUTypG8tIt3l4CZXJYMAfGKdVDmPex7XqgrB7HLnclSukzWJcZKdT4xDFf/DGlU8xVk2GPzJ5SGg==
   dependencies:
     "@formatjs/intl-localematcher" "0.2.32"
     negotiator "0.6.3"
