@@ -8,5 +8,8 @@
     "prev": "Anterior",
     "next": "Siguiente",
     "info": "Página {page, number} de {totalPages, number} ({totalElements, plural, =1 {un resultado} other {# resultados}} en total)"
+  },
+  "Footer": {
+    "credits": "Fotos proporcionadas por <unsplash>Unsplash</unsplash>"
   }
 }
