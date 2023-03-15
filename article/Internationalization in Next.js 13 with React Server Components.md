@@ -12,7 +12,7 @@ In this article, we’ll explore a multilingual app that displays street photogr
 
 ![](Internationalization%20in%20Next.js%2013%20with%20React%20Server%20Components/app-final-framed.png)
 
-[Interactive demo](https://street-photography-viewer.vercel.app/en)
+[Interactive demo](https://street-photography-viewer.vercel.app)
 
 ## Fetching photos from Unsplash
 A key benefit of Server Components is the ability to fetch data directly from inside components via `async`/`await`. We can use this to fetch the photos from Unsplash in our page component.
