@@ -1,7 +1,7 @@
 (draft for Smashing Magazine)
 
 # Internationalization in Next.js 13 with React Server Components
-With the introduction of [Next.js 13](https://beta.nextjs.org/docs/getting-started) and the beta release of the `app` directory, React Server Components became publicly available. This new paradigm allows components that don’t require React’s interactive features such as `useState` and `useEffect` to remain server-side only.
+With the introduction of [Next.js 13](https://beta.nextjs.org/docs/getting-started) and the beta release of the App Router, React Server Components became publicly available. This new paradigm allows components that don’t require React’s interactive features such as `useState` and `useEffect` to remain server-side only.
 
 One area that benefits from this new capability is **internationalization**.
 Traditionally, internationalization requires a tradeoff in performance, as loading translations results in larger client-side bundles and using message parsers impacts the client runtime performance of your app.
@@ -27,7 +27,7 @@ export default createApi({
 });
 ```
 
-Once we have our client, we can use it in our page component.
+Once we have our Unsplash API client, we can use it in our page component.
 
 ```tsx
 import {OrderBy} from 'unsplash-js';
@@ -91,7 +91,7 @@ Now the date when a photo has been updated is easier to read.
 
 ![](Internationalization%20in%20Next.js%2013%20with%20React%20Server%20Components/app-photo-item-date-formatted.png)
 
-**Hint:** In a traditional React app that renders on both the server and client side, it can be quite a challenge to ensure that the displayed relative date is in sync across the server and client. Since these are different environments and may be in different time zones, you need to configure a mechanism to provide the server time for the client side. By performing the formatting only on the server side, we don’t have to worry about this problem in the first place.
+**Hint:** In a traditional React app that renders on both the server and client side, it can be quite a challenge to ensure that the displayed relative date is in sync across the server and client. Since these are different environments and may be in different time zones, you need to configure a mechanism to transfer the server time to the client side. By performing the formatting only on the server side, we don’t have to worry about this problem in the first place.
 
 ### ¡Hola! 👋 Translating our app to Spanish
 
@@ -148,7 +148,7 @@ So far, so good!
 ## Adding interactivity: Dynamic ordering of photos
 By default, the Unsplash API returns the most popular photos. We want the user to be able to change the order to show the most recent photos first.
 
-Here, the question arises whether we should resort to client-side data fetching so that we can implement this feature with `useState`. However, that would require us to move all of our components to the client side, resulting in a bloated bundle.
+Here, the question arises whether we should resort to client-side data fetching so that we can implement this feature with `useState`. However, that would require us to move all of our components to the client side, resulting in an increased bundle size.
 
 Do we have an alternative? Yes. And it’s a capability that has been around on the web for ages: [search parameters](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams) (sometimes referred to as *query parameters*). What makes search parameters a great option for our use case is that they can be read on the server side.
 
@@ -164,15 +164,15 @@ export default async function Index({searchParams}) {
   ]);
 ```
 
-After this change, the user can already navigate to `/?orderBy=latest` to change the order of the displayed photos.
+After this change, the user can navigate to `/?orderBy=latest` to change the order of the displayed photos.
 
-In turn, we should provide a select widget that enables the user to change the value of the search parameter.
+To make it easy for the user to change the value of the search parameter, we’d like to render an interactive [`select` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select) from within a component.
 
 ![](Internationalization%20in%20Next.js%2013%20with%20React%20Server%20Components/app-order-select-collapsed.png)
 
-To be able to process the change event of the `select` element, we can mark the component with `'use client';` so that we can attach an event handler. Nevertheless, we would like to keep the internationalization concerns on the server side to reduce the size of the client bundle.
+We can mark the component with `'use client';` to attach an event handler and process change events from the `select` element. Nevertheless, we would like to keep the internationalization concerns on the server side to reduce the size of the client bundle.
 
-Let’s have a look at the required markup for our [`select` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select).
+Let’s have a look at the required markup for our `select` element.
 
 ```html
 <select>
@@ -210,7 +210,7 @@ export default function OrderBySelect({orderBy, children}) {
 }
 ```
 
-Now, let’s use our component in `PhotoViewer` and provide the `option` elements as  `children`.
+Now, let’s use our component in `PhotoViewer` and provide the localized `option` elements as  `children`.
 
 ```tsx
 import {useTranslations} from 'next-intl';
@@ -231,7 +231,7 @@ export default function PhotoViewer({orderBy, /* ... */}) {
 }
 ```
 
-With this pattern, the markup for the internationalized `option` elements is now generated on the server side and passed to the `OrderBySelect`, which handles the change event on the client side.
+With this pattern, the markup for the  `option` elements is now generated on the server side and passed to the `OrderBySelect`, which handles the change event on the client side.
 
 **Tip:** Since we have to wait for the updated markup to be generated on the server side when the order is changed, we may want to show the user a loading state. React 18 introduced [the `useTransition` hook](https://beta.reactjs.org/reference/react/useTransition)  which is integrated with Server Components. This allows us to disable the `select` element while waiting for a response from the server.
 
