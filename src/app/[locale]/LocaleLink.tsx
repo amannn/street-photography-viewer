@@ -1,8 +1,9 @@
 import clsx from 'clsx';
-import {useLocale, Link} from 'next-intl';
+import {useLocale} from 'next-intl';
+import {Link, locales} from '@/navigation';
 
 type Props = {
-  locale: string;
+  locale: typeof locales[number];
 };
 
 export default function LocaleLink({locale}: Props) {

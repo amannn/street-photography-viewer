@@ -1,8 +1,8 @@
 'use client';
 
-import {useRouter} from 'next-intl/client';
 import {ChangeEvent, ReactNode, useTransition} from 'react';
 import {OrderBy} from 'unsplash-js';
+import {useRouter} from '@/navigation';
 import Select from './Select';
 
 type Props = {

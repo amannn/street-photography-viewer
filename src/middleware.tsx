@@ -1,11 +1,12 @@
 import createIntlMiddleware from 'next-intl/middleware';
+import {locales} from './navigation';
 
 export default createIntlMiddleware({
-  locales: ['en', 'es'],
+  locales,
   defaultLocale: 'en'
 });
 
 export const config = {
   // Skip all non-content paths
-  matcher: ['/((?!_next|favicon.ico).*)']
+  matcher: ['/', '/(de|es)/:path*']
 };

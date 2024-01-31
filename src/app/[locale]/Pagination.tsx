@@ -1,6 +1,7 @@
 import {ArrowLeftIcon, ArrowRightIcon} from '@heroicons/react/24/solid';
-import {Link, useTranslations} from 'next-intl';
+import {useTranslations} from 'next-intl';
 import {OrderBy} from 'unsplash-js';
+import {Link} from '@/navigation';
 import {UrlObject} from 'url';
 import PageInfo from './PageInfo';
 import Text from './Text';
