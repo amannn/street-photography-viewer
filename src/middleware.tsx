@@ -8,5 +8,5 @@ export default createIntlMiddleware({
 
 export const config = {
   // Skip all non-content paths
-  matcher: ['/', '/(de|es)/:path*']
+  matcher: ['/', '/(en|es)/:path*']
 };
